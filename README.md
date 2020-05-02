@@ -1,18 +1,19 @@
 # Amplify React
 
-1. Create this vanilla React project, git init, test running and building.
+1. Create the vanilla React project.
+Run and build. 
+Install AWS Amplify.
 
 ```
 npx create-react-app react-amplify
 npm start 
 npm run build
-```
-
-2. Init amplify
-```
 npm install aws-amplify
-amplify init
-
-
 ```
+
+2. Initialize Amplify
+```
+amplify init
+```
+this creates the ```amplify``` folder.
 
