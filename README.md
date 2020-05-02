@@ -20,17 +20,16 @@ this creates the ```amplify``` folder.
 3. Update App.js to auth with existing Cognito resources
 
 Point to your Existing Amplify.configure()
-https://docs.amplify.aws/lib/auth/start/q/platform/js#re-use-existing-authentication-resource
 
-TODO: DOING... WIP
+https://docs.amplify.aws/lib/auth/start/q/platform/js#re-use-existing-authentication-resource
 
 4. Use pre-built UI components
 
-https://docs.amplify.aws/lib/auth/getting-started/q/platform/js#option-1-use-pre-built-ui-components
-
-tODo:
 
 ```
 npm install aws-amplify @aws-amplify/ui-react
-???
 ```
+
+Update App.js
+
+https://docs.amplify.aws/lib/auth/getting-started/q/platform/js#option-1-use-pre-built-ui-components

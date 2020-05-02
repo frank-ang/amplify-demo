@@ -2,12 +2,14 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Amplify, { Auth } from 'aws-amplify';
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+
 
 Amplify.configure({
     Auth: {
 
         // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
-        identityPoolId: 'ap-southeast-1:c117c162-8690-4b48-93e0-c69c7456e8a0',
+        identityPoolId: 'ap-southeast-1:2062865f-00fe-4d45-bd00-6e4a66eee185',
         
         // REQUIRED - Amazon Cognito Region
         region: 'ap-southeast-1',
@@ -17,10 +19,10 @@ Amplify.configure({
         identityPoolRegion: 'ap-southeast-1',
 
         // OPTIONAL - Amazon Cognito User Pool ID
-        userPoolId: 'ap-southeast-1_ZfX8bypYy',
+        userPoolId: 'ap-southeast-1_x26Zxp13y',
 
         // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
-        userPoolWebClientId: '6cfa6ajrrpla0nfkn6g8ijeb4h',
+        userPoolWebClientId: '68hgnamntu0p592oj18gp0q83o',
 
         // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
         mandatorySignIn: false,
@@ -83,8 +85,11 @@ function App() {
           Learn React
         </a>
       </header>
+      <AmplifySignOut />
+      My App
     </div>
   );
 }
 
-export default App;
+export default withAuthenticator(App);
+// export default App;
