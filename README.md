@@ -19,17 +19,30 @@ this creates the ```amplify``` folder.
 
 3. Update App.js to auth with existing Cognito resources
 
-Point to your Existing Amplify.configure()
+Point to existing Cognito resources, in Amplify.configure()
 
 https://docs.amplify.aws/lib/auth/start/q/platform/js#re-use-existing-authentication-resource
 
-4. Use pre-built UI components
+TODO externalize config.
 
+4. Use pre-built UI components and react-bootstrap
 
 ```
-npm install aws-amplify @aws-amplify/ui-react
+npm install aws-amplify-react
+npm install @aws-amplify/ui-react
+npm install react-bootstrap bootstrap
 ```
 
-Update App.js
-
+Reference:
 https://docs.amplify.aws/lib/auth/getting-started/q/platform/js#option-1-use-pre-built-ui-components
+
+Update [src/my-aws-config.js](src/my-aws-config.js) with your environment configuration.
+
+5. Deploy to S3 website.
+
+The ```deploy``` target in [package.json](./package.json) calls [scripts/deploy-website.sh](./scripts/deploy-website.sh) , which syncs files to the S3 website, and invalidates the CloudFront cache. To deploy to S3 website, simply run:
+
+```
+npm run build
+npm run deploy
+```
