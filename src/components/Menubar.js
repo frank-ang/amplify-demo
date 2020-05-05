@@ -5,10 +5,10 @@ import Button from 'react-bootstrap/Button';
 import { AmplifySignOut } from '@aws-amplify/ui-react';
 import { setCurrentUserInfo, getCurrentUserInfo } from './utils';
 
-function MenuGreeting() {
-    if (getCurrentUserInfo() != null) {
+function MenuGreeting(props) {
+    if (props.userInfo != null && props.userInfo.username != null) {
         return <>
-            <Navbar.Text>Hello, {getCurrentUserInfo().username}</Navbar.Text>
+            <Navbar.Text>Hello, {props.userInfo.username}</Navbar.Text>
             <Nav.Item><AmplifySignOut/></Nav.Item>
             </>
     } else {
@@ -17,15 +17,18 @@ function MenuGreeting() {
 }
 
 class Menubar extends React.Component {
-
+    
     constructor(props) {
-        console.log("Menubar constructor(), props:" + JSON.stringify(props));
         super(props);
+        console.log("Menubar constructor(), props:" + JSON.stringify(props));
         this.state = { userInfo: getCurrentUserInfo() };
         Hub.listen('auth', (data) => {
-            console.log("## Menubar: listened to Auth event so refreshing state...");
-            setCurrentUserInfo();
-            this.setState({ userInfo: getCurrentUserInfo() });
+            console.log("## Menubar: received auth event: " + JSON.stringify(data.payload.event));
+            if (data.payload.event === "signIn") {
+                this.setState({ userInfo: data.payload.data });
+            } else if (data.payload.event === "signOut") {
+                this.setState({ userInfo: null });
+            }
         });
     }
 
@@ -48,7 +51,7 @@ class Menubar extends React.Component {
                 </NavDropdown>
                 </Nav>
                 <Nav>      
-                    <MenuGreeting/>
+                    <MenuGreeting userInfo={this.state.userInfo}/>
                 </Nav>
 
                 <Form inline>

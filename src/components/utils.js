@@ -1,5 +1,6 @@
 import { Auth } from 'aws-amplify';
 
+// asynchronously sets the user info
 function setCurrentUserInfo() {
   Auth.currentUserInfo().then(result => {
     const value = result;
