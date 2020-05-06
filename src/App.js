@@ -1,12 +1,27 @@
 import React from 'react';
 import './App.css';
 import Amplify, { Hub } from 'aws-amplify';
-import { AmplifyAuthenticator, AmplifySignOut, AmplifyGreetings } from '@aws-amplify/ui-react';
+import { AmplifyAuthenticator, AmplifySignUp, AmplifySignOut, AmplifyGreetings } from '@aws-amplify/ui-react';
 import awsmobile from './my-aws-config';
 import Menubar from './components/Menubar';
+import Home from './components/Home';
+import About from './components/About';
+import Feature from './components/Feature';
+import RandomUser from './components/RandomUser';
+import NotFound from './components/NotFound';
+
 import { setCurrentUserInfo, getCurrentUserInfo } from './components/utils';
+import {
+  Route,
+  BrowserRouter as Router,
+  Switch,
+} from 'react-router-dom';
 
 Amplify.configure(awsmobile);
+
+function Welcome(props) {
+  return <h1>Hello, {props.username}</h1>;
+}
 
 class App extends React.Component {
   
@@ -32,14 +47,41 @@ class App extends React.Component {
       <div className="App">
         <Menubar/>
         <div>
-          Sample React App with Amplify Cognito auth and react bootstrap menu.
-          Date: {new Date().toLocaleString()}
+          <Router>
+              <Switch>
+                  <Route exact path="/" component={Home} />} />
+                  <Route exact path="/about" component={About} />
+                  <Route exact path="/RandomUser" component={RandomUser} />
+                  <AmplifyAuthenticator>
+                    <AmplifySignUp slot="sign-up" formFields={[
+                      {
+                        type: "username",
+                        label: "User Name",
+                        required: true,
+                      },
+                      {
+                        type: "email",
+                        label: "Email",
+                        required: true,
+                      },
+                      {
+                        type: "password",
+                        label: "Password",
+                        required: true,
+                      },
+                    ]}
+                    />
+                    <Route exact path="/feature" component={Feature} />
+                  </AmplifyAuthenticator>
+                  {/* TODO NotFound page is not working */}
+              </Switch>
+          </Router>
+        </div>
+        <div id="footer">
           <hr/>
-          <AmplifyAuthenticator>
-              Hello: { username }
-              <AmplifySignOut/>
-
-          </AmplifyAuthenticator>
+          Example ReactJS App with AWS Amplify Auth, by Frank Ang. 
+          <br/>
+          Server time: {new Date().toLocaleString()}
         </div>
       </div>
     );

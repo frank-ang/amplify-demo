@@ -60,4 +60,9 @@ const awsmobile = {
     }
 };
 
+const appconfig = {
+    apiurl: "https://rxbiv0h1vj.execute-api.ap-southeast-1.amazonaws.com/face-rekognition"
+};
+
 export default awsmobile;
+export { appconfig };

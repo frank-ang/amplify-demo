@@ -1,6 +1,8 @@
 # Amplify React
 
-1. Create the vanilla React project.
+Below are notes to self on my app build process.
+
+## 1. Create the vanilla React project.
 Run and build. 
 Install AWS Amplify.
 
@@ -11,13 +13,15 @@ npm run build
 npm install aws-amplify
 ```
 
-2. Initialize Amplify
+## 2. Initialize Amplify
 ```
 amplify init
 ```
 this creates the ```amplify``` folder.
 
-3. Update App.js to auth with existing Cognito resources
+## 3. Code the app!
+
+1. Update App.js to auth with existing Cognito resources
 
 Point to existing Cognito resources, in Amplify.configure()
 
@@ -25,7 +29,7 @@ https://docs.amplify.aws/lib/auth/start/q/platform/js#re-use-existing-authentica
 
 TODO externalize config.
 
-4. Use pre-built UI components and react-bootstrap
+2. Use pre-built UI components and react-bootstrap
 
 ```
 npm install aws-amplify-react
@@ -38,7 +42,13 @@ https://docs.amplify.aws/lib/auth/getting-started/q/platform/js#option-1-use-pre
 
 Update [src/my-aws-config.js](src/my-aws-config.js) with your environment configuration.
 
-5. Deploy to S3 website.
+3. Setup Routing.
+
+```
+npm install react-router-dom
+```
+
+## 4. Deploy to S3 website.
 
 The ```deploy``` target in [package.json](./package.json) calls [scripts/deploy-website.sh](./scripts/deploy-website.sh) , which syncs files to the S3 website, and invalidates the CloudFront cache. To deploy to S3 website, simply run:
 
