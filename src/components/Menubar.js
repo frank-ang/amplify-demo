@@ -51,7 +51,7 @@ class Menubar extends React.Component {
                 </NavDropdown>
                 </Nav>
 
-                <Nav class="row justify-content-center">
+                <Nav className="row justify-content-center">
                     <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                     <Button variant="outline-success">Search</Button>
