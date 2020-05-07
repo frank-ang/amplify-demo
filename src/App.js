@@ -7,8 +7,9 @@ import Menubar from './components/Menubar';
 import Home from './components/Home';
 import About from './components/About';
 import Feature from './components/Feature';
+import Hello from './components/Hello';
 import RandomUser from './components/RandomUser';
-import NotFound from './components/NotFound';
+// import NotFound from './components/NotFound';
 
 import { setCurrentUserInfo, getCurrentUserInfo } from './components/utils';
 import {
@@ -71,6 +72,7 @@ class App extends React.Component {
                       },
                     ]}
                     />
+                    <Route exact path="/hello" component={Hello} />
                     <Route exact path="/feature" component={Feature} />
                   </AmplifyAuthenticator>
                   {/* TODO NotFound page is not working */}
