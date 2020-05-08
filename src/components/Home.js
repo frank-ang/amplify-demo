@@ -46,7 +46,7 @@ function HomeCarousel() {
   
 const Home = () => ( 
     <div>
-        <h1>Welcome to the Awesomest Sample App</h1>
+        <h1>AWSomest Demos</h1>
         <HomeCarousel/>
         <p>Try it!</p>
     </div>

@@ -37,31 +37,24 @@ const awsmobile = {
         // Either true or false, indicating if the cookie transmission requires a secure protocol (https).
             secure: false
         },*/
-        
-        // OPTIONAL - customized storage object
-        // storage: new MyStorage(),
 
         // OPTIONAL - Manually set the authentication flow type. Default is 'USER_SRP_AUTH'
         authenticationFlowType: 'USER_PASSWORD_AUTH',
-
-        // OPTIONAL - Manually set key value pairs that can be passed to Cognito Lambda Triggers
-        // clientMetadata: { myCustomKey: 'myCustomValue' },
-
-        // OPTIONAL - Hosted UI configuration
-        /*
-        oauth: {
-            domain: 'your_cognito_domain',
-            scope: ['phone', 'email', 'profile', 'openid', 'aws.cognito.signin.user.admin'],
-            redirectSignIn: 'http://localhost:3000/',
-            redirectSignOut: 'http://localhost:3000/',
-            responseType: 'code' // or 'token', note that REFRESH token will only be generated when the responseType is code
-        }
-        */
+    },
+    API: {
+        endpoints: [
+            {
+                name: "hello",
+                endpoint: "https://gvx5s2j457.execute-api.ap-southeast-1.amazonaws.com"
+            }
+        ]
     }
 };
 
+// Replace with your API configurations
 const appconfig = {
-    apiurl: "https://rxbiv0h1vj.execute-api.ap-southeast-1.amazonaws.com/face-rekognition"
+    hello_public_api_endpoint: "https://or76vnrunc.execute-api.ap-southeast-1.amazonaws.com/dev/hello",
+    hello_private_api_endpoint: "https://or76vnrunc.execute-api.ap-southeast-1.amazonaws.com/dev/hello/private",
 };
 
 export default awsmobile;

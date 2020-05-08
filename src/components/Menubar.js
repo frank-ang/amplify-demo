@@ -36,13 +36,14 @@ class Menubar extends React.Component {
         return (
         <div>
             <Navbar bg="dark" variant="dark" expand="lg" sticky="top" fixed="top" >
-            <Navbar.Brand href="#home">Sample React App</Navbar.Brand>
+            <Navbar.Brand href="#home">Demo Bag</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/about">About</Nav.Link>
                 <NavDropdown title="Demos" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/hello">Call Hello Api</NavDropdown.Item>
                     <NavDropdown.Item href="/RandomUser">Call Random User Api</NavDropdown.Item>
                     <NavDropdown.Item href="/feature">Some Feature</NavDropdown.Item>
                     <NavDropdown.Divider />
@@ -50,11 +51,12 @@ class Menubar extends React.Component {
                 </NavDropdown>
                 </Nav>
 
-                <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                <Button variant="outline-success">Search</Button>
-                </Form>
-
+                <Nav className="row justify-content-center">
+                    <Form inline>
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <Button variant="outline-success">Search</Button>
+                    </Form>
+                </Nav>
                 <Nav>
                     <MenuGreeting userInfo={this.state.userInfo}/>
                 </Nav>
