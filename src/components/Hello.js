@@ -1,5 +1,5 @@
 import React from 'react'
-import { appconfig } from '../my-aws-config'
+import { appconfig } from './my-aws-config'
 import API from '@aws-amplify/api';
 import { Auth } from 'aws-amplify';
 
@@ -20,6 +20,7 @@ class Hello extends React.Component {
     }
   
     componentWillMount() {
+      // redundant?
       this.getHello();
       this.getHelloAuthenticated();
     }
@@ -28,6 +29,8 @@ class Hello extends React.Component {
       const session = await Auth.currentSession();
       this.setState({ authToken: session.accessToken.jwtToken });
       this.setState({ idToken: session.idToken.jwtToken });
+      this.getHello();
+      this.getHelloAuthenticated();
     }  
 
     getHello() {

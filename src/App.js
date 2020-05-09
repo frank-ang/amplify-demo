@@ -2,12 +2,13 @@ import React from 'react';
 import './App.css';
 import Amplify, { Hub } from 'aws-amplify';
 import { AmplifyAuthenticator, AmplifySignUp, AmplifySignOut, AmplifyGreetings } from '@aws-amplify/ui-react';
-import awsmobile from './my-aws-config';
+import awsmobile from './components/my-aws-config';
 import Menubar from './components/Menubar';
 import Home from './components/Home';
 import About from './components/About';
 import Feature from './components/Feature';
 import Hello from './components/Hello';
+import Upload from './components/Upload';
 import RandomUser from './components/RandomUser';
 // import NotFound from './components/NotFound';
 
@@ -73,6 +74,7 @@ class App extends React.Component {
                     ]}
                     />
                     <Route exact path="/hello" component={Hello} />
+                    <Route exact path="/upload" component={Upload} />
                     <Route exact path="/feature" component={Feature} />
                   </AmplifyAuthenticator>
                   {/* TODO NotFound page is not working */}

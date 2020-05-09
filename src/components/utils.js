@@ -6,7 +6,7 @@ function setCurrentUserInfo() {
     const value = result;
     console.log(">>>> ## setCurrentUserInfo(): " + value + ", JSON: " + JSON.stringify(value));
     sessionStorage.setItem('currentUserInfo', JSON.stringify(value));
-  }); 
+  });
 }
 
 function getCurrentUserInfo() {

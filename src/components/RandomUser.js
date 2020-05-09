@@ -1,5 +1,5 @@
 import React from 'react'
-import { appconfig } from '../my-aws-config'
+import { appconfig } from './my-aws-config'
 
 // Example of calling an API.
 // source: https://gist.github.com/aerrity/ae1a526b4f1c9fb031efec43bfb9bfaf

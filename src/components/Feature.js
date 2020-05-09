@@ -1,6 +1,5 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
-import { appconfig } from '../my-aws-config'
 
 const FeatureId = ({ match }) => <p>{match.params.id}</p>
 
