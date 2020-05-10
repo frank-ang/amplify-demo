@@ -44,6 +44,7 @@ class Menubar extends React.Component {
                 <Nav.Link href="/about">About</Nav.Link>
                 <NavDropdown title="Demos" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/hello">Call Hello Api</NavDropdown.Item>
+                    <NavDropdown.Item href="/upload">Upload to S3</NavDropdown.Item>
                     <NavDropdown.Item href="/RandomUser">Call Random User Api</NavDropdown.Item>
                     <NavDropdown.Item href="/feature">Some Feature</NavDropdown.Item>
                     <NavDropdown.Divider />

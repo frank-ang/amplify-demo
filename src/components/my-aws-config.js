@@ -5,7 +5,7 @@ const awsmobile = {
     Auth: {
 
         // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
-        // identityPoolId: 'ap-southeast-1:2062865f-00fe-4d45-bd00-6e4a66eee185',
+        identityPoolId: 'ap-southeast-1:2062865f-00fe-4d45-bd00-6e4a66eee185',
         
         // REQUIRED - Amazon Cognito Region
         region: 'ap-southeast-1',
@@ -48,6 +48,13 @@ const awsmobile = {
                 endpoint: "https://gvx5s2j457.execute-api.ap-southeast-1.amazonaws.com"
             }
         ]
+    },
+
+    Storage: {
+        AWSS3: {
+            bucket: "sandbox00-playground",
+            region: 'ap-southeast-1'
+        }
     }
 };
 
@@ -55,6 +62,7 @@ const awsmobile = {
 const appconfig = {
     hello_public_api_endpoint: "https://or76vnrunc.execute-api.ap-southeast-1.amazonaws.com/dev/hello",
     hello_private_api_endpoint: "https://or76vnrunc.execute-api.ap-southeast-1.amazonaws.com/dev/hello/private",
+    upload_bucket_name: "sandbox00-playground"
 };
 
 export default awsmobile;

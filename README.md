@@ -56,3 +56,12 @@ The ```deploy``` target in [package.json](./package.json) calls [scripts/deploy-
 npm run build
 npm run deploy
 ```
+## 5. setup S3 uploader
+
+```
+npm install aws-sdk
+```
+
+s3 bucket should have folder paths for "public", "protected", "private".
+
+Update IAM policies for ID Pool roles.
